@@ -2,8 +2,10 @@
 var express = require('express');
 var router  = express.Router();
 
-var AlunoController = require('../controllers/AlunoController');
+var mongoose = require('../db/mongoose');
+var AlunoModel = require('../models/AlunoModel')(mongoose);
+var AlunoController = require('../controllers/AlunoController')(AlunoModel);
 
-router.get('/', AlunoController.getAll);
+router.get('/', AlunoController.getAll.bind(AlunoController));
 
 module.exports = router;
