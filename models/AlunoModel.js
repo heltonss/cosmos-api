@@ -11,7 +11,7 @@ AlunoModelDAO.prototype.find = function (query, callback) {
 
 module.exports = function(mongoose){
     var alunos = mongoose.model('aluno',{
-        name: String,
+        nome: String,
         curso: String
     });
 
