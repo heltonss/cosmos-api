@@ -7,6 +7,7 @@
     "nodemon": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "~1.16.0",
     "config": "^1.25.1",
     "cookie-parser": "~1.4.3",
