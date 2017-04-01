@@ -1,10 +1,10 @@
 'use strict';
 
-function AlunoModelDAO(model) {
+function CoordenadorModelDAO(model) {
     this.model = model;
 };
 
-AlunoModelDAO.prototype.create = function (data, callback) {
+CoordenadorModelDAO.prototype.create = function (data, callback) {
     var model = new this.model(data);
     model.save(function (err, result) {
         callback(err, result)
@@ -12,18 +12,18 @@ AlunoModelDAO.prototype.create = function (data, callback) {
 
 }
 
-AlunoModelDAO.prototype.find = function (query, callback) {
+CoordenadorModelDAO.prototype.find = function (query, callback) {
     this.model.find(query).exec(callback);
 
 }
 
-AlunoModelDAO.prototype.findOne = function (_id, callback) {
+CoordenadorModelDAO.prototype.findOne = function (_id, callback) {
     var query = { _id: _id }
     this.model.findOne(query).exec(callback);
 
 }
 
-AlunoModelDAO.prototype.update = function (_id, data, callback) {
+CoordenadorModelDAO.prototype.update = function (_id, data, callback) {
     var query = { _id: _id }
     this.model.update(query, data).exec(
         function (err, result) {
@@ -32,7 +32,7 @@ AlunoModelDAO.prototype.update = function (_id, data, callback) {
 
 }
 
-AlunoModelDAO.prototype.remove = function (_id, callback) {
+CoordenadorModelDAO.prototype.remove = function (_id, callback) {
     var query = { _id: _id }
     this.model.remove(query).exec(
         function (err, result) {
@@ -42,12 +42,12 @@ AlunoModelDAO.prototype.remove = function (_id, callback) {
 }
 
 module.exports = function (mongoose) {
-    var aluno = mongoose.model('alunos', {
+    var coordenador = mongoose.model('coordenadores', {
         nome: String,
         cpf: String,
         login: String,
         password: String
     });
 
-    return new AlunoModelDAO(aluno);
+    return new CoordenadorModelDAO(coordenador);
 }

@@ -2,11 +2,11 @@
 var debug = require('debug')('cosmos:controller')
 var Promise = require('bluebird');
 
-function AlunoController(AlunoModel) {
-    this.model = Promise.promisifyAll(AlunoModel);
+function ProfessorController(ProfessorModel) {
+    this.model = Promise.promisifyAll(ProfessorModel);
 }
 
-AlunoController.prototype.getAll = function (req, res, next) {
+ProfessorController.prototype.getAll = function (req, res, next) {
     this.model.findAsync({})
         .then(function (data) {
             res.json(data);
@@ -14,7 +14,7 @@ AlunoController.prototype.getAll = function (req, res, next) {
         .catch(next);
 }
 
-AlunoController.prototype.create = function (req, res, next) {
+ProfessorController.prototype.create = function (req, res, next) {
     var body = req.body
     this.model.createAsync(body)
         .then(function (err, data) {
@@ -23,7 +23,7 @@ AlunoController.prototype.create = function (req, res, next) {
         .catch(next);
 }
 
-AlunoController.prototype.getById = function (req, res, next) {
+ProfessorController.prototype.getById = function (req, res, next) {
     var _id = req.params._id;
     this.model.findOneAsync(_id)
         .then(function (data) {
@@ -32,7 +32,7 @@ AlunoController.prototype.getById = function (req, res, next) {
         .catch(next);
 }
 
-AlunoController.prototype.update = function (req, res, next) {
+ProfessorController.prototype.update = function (req, res, next) {
     var _id = req.params._id;
     var body = req.body;
     this.model.updateAsync(_id, body)
@@ -42,7 +42,7 @@ AlunoController.prototype.update = function (req, res, next) {
         .catch(next);
 }
 
-AlunoController.prototype.remove = function (req, res, next) {
+ProfessorController.prototype.remove = function (req, res, next) {
     var _id = req.params._id;
     this.model.removeAsync(_id)
         .then(function (data) {
@@ -51,6 +51,6 @@ AlunoController.prototype.remove = function (req, res, next) {
         .catch(next);
 }
 
-module.exports = function (AlunoModel) {
-    return new AlunoController(AlunoModel);
+module.exports = function (ProfessorModel) {
+    return new ProfessorController(ProfessorModel);
 };
