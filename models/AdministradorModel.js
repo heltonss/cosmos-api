@@ -44,9 +44,10 @@ AdministradorModelDAO.prototype.remove = function (_id, callback) {
 module.exports = function (mongoose) {
     var administrador = mongoose.model('administradores', {
         nome: String,
-        cpf: String,
-        login: String,
-        password: String
+        sobrenome: String,
+        email: String,
+        cargo: String,
+        login: String
     });
 
     return new AdministradorModelDAO(administrador);

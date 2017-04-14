@@ -2,11 +2,11 @@
 var debug = require('debug')('cosmos:controller')
 var Promise = require('bluebird');
 
-function ProfessorController(ProfessorModel) {
-    this.model = Promise.promisifyAll(ProfessorModel);
+function DiretorController(DiretorModel) {
+    this.model = Promise.promisifyAll(DiretorModel);
 }
 
-ProfessorController.prototype.getAll = function (req, res, next) {
+DiretorController.prototype.getAll = function (req, res, next) {
     this.model.findAsync({})
         .then(function (data) {
             res.json(data);
@@ -14,7 +14,7 @@ ProfessorController.prototype.getAll = function (req, res, next) {
         .catch(next);
 }
 
-ProfessorController.prototype.create = function (req, res, next) {
+DiretorController.prototype.create = function (req, res, next) {
     var body = req.body
     this.model.createAsync(body)
         .then(function (err, data) {
@@ -23,7 +23,7 @@ ProfessorController.prototype.create = function (req, res, next) {
         .catch(next);
 }
 
-ProfessorController.prototype.getById = function (req, res, next) {
+DiretorController.prototype.getById = function (req, res, next) {
     var _id = req.params._id;
     this.model.findOneAsync(_id)
         .then(function (data) {
@@ -32,7 +32,7 @@ ProfessorController.prototype.getById = function (req, res, next) {
         .catch(next);
 }
 
-ProfessorController.prototype.update = function (req, res, next) {
+DiretorController.prototype.update = function (req, res, next) {
     var _id = req.params._id;
     var body = req.body;
     this.model.updateAsync(_id, body)
@@ -42,7 +42,7 @@ ProfessorController.prototype.update = function (req, res, next) {
         .catch(next);
 }
 
-ProfessorController.prototype.remove = function (req, res, next) {
+DiretorController.prototype.remove = function (req, res, next) {
     var _id = req.params._id;
     this.model.removeAsync(_id)
         .then(function (data) {
@@ -51,6 +51,6 @@ ProfessorController.prototype.remove = function (req, res, next) {
         .catch(next);
 }
 
-module.exports = function (ProfessorModel) {
-    return new ProfessorController(ProfessorModel);
+module.exports = function (DiretorModel) {
+    return new DiretorController(DiretorModel);
 };
