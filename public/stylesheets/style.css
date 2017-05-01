@@ -1,8 +1,71 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #666;
+
+}
+a:hover, a:focus{
+  text-decoration: none;
+}
+
+.title-main{
+  font-size: 1.8em
+}
+
+.title-subtitle{
+  font-size: 1.6em
+}
+
+.title-panel{
+  font-size: 1.4em;
+  margin-left: 2%;
+  min-width: 150px;
+}
+.container-body{
+  background: rgb(220, 220, 220)
+}
+.describe-method{
+  font-size: 1.4rem
+}
+
+.display-flex{
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  align-items: baseline;
+  width: 100%
+}
+
+.icons-status{
+  min-width: 85px;
+  padding: 6px 15px;
+  text-align: center
+}
+
+.body-panel{
+  background: rgba(214, 233, 198, 0.3)
+}
+
+.post{
+  background: green;
+  color: #fff
+}
+
+.put{
+  background: #FF8C00;
+}
+.delete{
+  background: #FF0000
+}
+
+.parameters{
+  background: #D9D9F3;
+  height: 3rem;
+  padding: 0.5% 
+}
+
+.code{
+  background: #41444e;
+  color: white
 }

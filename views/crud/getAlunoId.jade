@@ -1,0 +1,48 @@
+section.row
+div.panel-group(id="accordion" role="tablist" aria-multiselectable="true")
+    div.panel.panel-success
+        div.panel-heading(role="tab" id="headingOne")
+            a.display-flex(role="button" data-toggle="collapse" data-parent="#accordion" href="#getAlunoId" aria-expanded="false" aria-controls="collapseOne")
+                span.bg-primary.icons-status GET
+                span.title-panel /aluno/:id 
+                span.describe-method recupera um aluno da lista
+
+        div.panel-collapse.collapse(id="getAlunoId" role="tabpanel" aria-labelledby="headingOne")
+            div.panel-body.body-panel
+                p retorna um aluno da lista de alunos 
+                p.bg-default.parameters Parâmetros
+                    table.table
+                        tr
+                            th nome
+                            th Descrição
+                        tr
+                            td id 
+                                small required
+                            td id do aluno que deve retorna
+                            td 
+                                pre.code
+                                    code ok
+                                div
+                                    p Exemplo | Model
+                                    pre.code
+                                        code 
+                                            include model/aluno.json
+               
+                p insere objeto aluno na lista de alunos
+                p.bg-default.parameters Resposta
+                  table.table
+                    tr
+                        th Código de status
+                        th Descrição
+                    tr
+                        td 200 
+                        td 
+                            pre.code
+                                code ok
+                    tr
+                        td 500
+                        td
+                            pre.code
+                                code erro de servidor, o servidor pode esta fora do ar ou o id do objeto não existe ou não foi passado corretamente.
+
+                          

@@ -1,0 +1,50 @@
+section.row
+div.panel-group(id="accordion" role="tablist" aria-multiselectable="true")
+    div.panel.panel-info
+        div.panel-heading(role="tab" id="headingOne")
+            a.display-flex(role="button" data-toggle="collapse" data-parent="#accordion" href="#postAluno" aria-expanded="false" aria-controls="collapseOne")
+               span.post.icons-status POST
+               span.title-panel /aluno 
+               span.describe-method gravar um aluno na lista[array] de alunos
+
+        div.panel-collapse.collapse(id="postAluno" role="tabpanel" aria-labelledby="headingOne")
+            div.panel-body.body-panel
+                p insere objeto aluno na lista de alunos
+                p.bg-default.parameters Parâmetros
+                  table.table
+                    tr
+                        th nome
+                        th Descrição
+                    tr
+                        td Body 
+                            small required
+                        td objeto aluno que deve ser inserido na lista de alunos
+                        td 
+                            pre.code
+                                code ok
+                            div
+                                p Exemplo | Model
+                                pre.code
+                                    code 
+                                        include model/aluno.json
+             
+                p.bg-default.parameters Resposta 
+                    span.pull-right content-type: application/json 
+                    table.table
+                     tr
+                        th Código de status
+                        th Descrição
+                     tr
+                        td 200
+                        td 
+                            pre.code
+                                code ok
+                     tr
+                        td 400
+                        td 
+                            pre.code
+                                code Solicitação imprópria, o body pode estar com mal formatado.
+            
+                            
+              
+                                   

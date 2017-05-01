@@ -2,4 +2,24 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Documentação da API #{title} 
+
+  div.panel.panel-default
+    div.panel-heading
+      h1.panel-title <b>ALUNO: </b> endpoints para aluno
+    div.panel-body
+      include crud/postAluno.jade
+      include crud/getAluno.jade
+      include crud/getAlunoId.jade
+      include crud/putAlunoId.jade
+      include crud/deleteAlunoId.jade
+
+  div.panel.panel-default
+    div.panel-heading
+      h1.panel-title <b>PROFESSOR: </b> endpoints para professor
+    div.panel-body
+      include crudProfessor/postProfessor.jade
+      include crudProfessor/getProfessor.jade
+      include crudProfessor/getProfessorId.jade
+      include crudProfessor/putProfessor.jade
+      include crudProfessor/deleteProfessor.jade
