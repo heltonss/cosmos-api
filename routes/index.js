@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'COSMOS' });
 });
 
-router.use('/aluno', require('./aluno'));
+router.use('/alunos', require('./aluno'));
 router.use('/administrador', require('./administrador'))
-router.use('/professor', require('./professor'))
-router.use('/coordenador', require('./coordenador'))
-router.use('/diretor', require('./diretor'))
-router.use('/curso', require('./curso'))
-router.use('/semestre', require('./semestre'))
+router.use('/professores', require('./professor'))
+router.use('/coordenadores', require('./coordenador'))
+router.use('/diretores', require('./diretor'))
+router.use('/cursos', require('./curso'))
+router.use('/semestres', require('./semestre'))
 
 module.exports = router;

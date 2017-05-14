@@ -43,8 +43,12 @@ SemestreModelDAO.prototype.remove = function (_id, callback) {
 
 module.exports = function (mongoose) {
     var Semestre = mongoose.model('semestres', {
+        ano: String,
         curso: String,
-        semestres: Object,
+        semestre: String,
+        disciplina: String,
+        professor: String,
+        alunosMatriculados: Array
     });
 
     return new SemestreModelDAO(Semestre);

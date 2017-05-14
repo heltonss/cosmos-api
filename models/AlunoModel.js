@@ -49,7 +49,7 @@ module.exports = function (mongoose) {
         naturalidade: String,
         sexo: String,
         foto: String,
-        notas: Array,
+        disciplinas: Array,
         matricula: Object,
         endereco: Object,
         contato: Object
