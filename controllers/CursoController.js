@@ -2,11 +2,11 @@
 var debug = require('debug')('cosmos:controller')
 var Promise = require('bluebird');
 
-function DiretorController(DiretorModel) {
-    this.model = Promise.promisifyAll(DiretorModel);
+function CursoController(CursoModel) {
+    this.model = Promise.promisifyAll(CursoModel);
 }
 
-DiretorController.prototype.getAll = function (req, res, next) {
+CursoController.prototype.getAll = function (req, res, next) {
     this.model.findAsync({})
         .then(function (data) {
             res.json(data);
@@ -14,7 +14,7 @@ DiretorController.prototype.getAll = function (req, res, next) {
         .catch(next);
 }
 
-DiretorController.prototype.create = function (req, res, next) {
+CursoController.prototype.create = function (req, res, next) {
     var body = req.body
     this.model.createAsync(body)
         .then(function (err, data) {
@@ -23,7 +23,7 @@ DiretorController.prototype.create = function (req, res, next) {
         .catch(next);
 }
 
-DiretorController.prototype.getById = function (req, res, next) {
+CursoController.prototype.getById = function (req, res, next) {
     var _id = req.params._id;
     this.model.findOneAsync(_id)
         .then(function (data) {
@@ -32,7 +32,7 @@ DiretorController.prototype.getById = function (req, res, next) {
         .catch(next);
 }
 
-DiretorController.prototype.update = function (req, res, next) {
+CursoController.prototype.update = function (req, res, next) {
     var _id = req.params._id;
     var body = req.body;
     this.model.updateAsync(_id, body)
@@ -42,7 +42,7 @@ DiretorController.prototype.update = function (req, res, next) {
         .catch(next);
 }
 
-DiretorController.prototype.remove = function (req, res, next) {
+CursoController.prototype.remove = function (req, res, next) {
     var _id = req.params._id;
     this.model.removeAsync(_id)
         .then(function (data) {
@@ -51,6 +51,6 @@ DiretorController.prototype.remove = function (req, res, next) {
         .catch(next);
 }
 
-module.exports = function (DiretorModel) {
-    return new DiretorController(DiretorModel);
+module.exports = function (CursoModel) {
+    return new CursoController(CursoModel);
 };

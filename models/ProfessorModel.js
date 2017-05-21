@@ -44,9 +44,16 @@ ProfessorModelDAO.prototype.remove = function (_id, callback) {
 module.exports = function (mongoose) {
     var Professor = mongoose.model('professores', {
         nome: String,
-        cpf: String,
-        login: String,
-        password: String
+        sobrenome: String,
+        dataNascimento: Date,
+        naturalidade: String,
+        sexo: String,
+        foto: String,
+        infoAcademica: Object,
+        materias: Array,
+        endereco: Object,
+        contato: Object
+
     });
 
     return new ProfessorModelDAO(Professor);

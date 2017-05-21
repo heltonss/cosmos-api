@@ -1,0 +1,51 @@
+section.row
+div.panel-group(id="accordion" role="tablist" aria-multiselectable="true")
+    div.panel.panel-warning
+        div.panel-heading(role="tab" id="headingOne")
+            a.display-flex(role="button" data-toggle="collapse" data-parent="#accordion" href="#putProfessorId" aria-expanded="false" aria-controls="collapseOne")
+                span.bg-primary.icons-status.put PUT
+                span.title-panel /professores/:id 
+                span.describe-method atualiza um professor
+
+        div.panel-collapse.collapse(id="putProfessorId" role="tabpanel" aria-labelledby="headingOne")
+            div.panel-body.body-panel
+                p atualiza um aluno da lista de alunos 
+                p.bg-default.parameters Parâmetros
+                    table.table
+                        tr
+                            th nome
+                            th Descrição
+                        tr
+                            td id 
+                                small required
+                            td id do aluno que deve ser atualizado
+                        tr
+                            td Body 
+                                small required
+                            td objeto aluno que deve ser inserido na lista de alunos
+                            td 
+                                pre.code
+                                    code ok
+                                div
+                                    p Exemplo | Model
+                                    pre.code
+                                        code 
+                                            include model/aluno.json
+               
+                p.bg-default.parameters Resposta
+                  table.table
+                    tr
+                        th Código de status
+                        th Descrição
+                    tr
+                        td 200 
+                        td 
+                            pre.code
+                                code ok
+                    tr
+                        td 500
+                        td
+                            pre.code
+                                code erro de servidor, o servidor pode esta fora do ar ou o id do objeto não existe ou não foi passado corretamente.
+
+                          

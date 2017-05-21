@@ -1,10 +1,10 @@
 'use strict';
 
-function AdministradorModelDAO(model) {
+function SemestreModelDAO(model) {
     this.model = model;
 };
 
-AdministradorModelDAO.prototype.create = function (data, callback) {
+SemestreModelDAO.prototype.create = function (data, callback) {
     var model = new this.model(data);
     model.save(function (err, result) {
         callback(err, result)
@@ -12,18 +12,18 @@ AdministradorModelDAO.prototype.create = function (data, callback) {
 
 }
 
-AdministradorModelDAO.prototype.find = function (query, callback) {
+SemestreModelDAO.prototype.find = function (query, callback) {
     this.model.find(query).exec(callback);
 
 }
 
-AdministradorModelDAO.prototype.findOne = function (_id, callback) {
+SemestreModelDAO.prototype.findOne = function (_id, callback) {
     var query = { _id: _id }
     this.model.findOne(query).exec(callback);
 
 }
 
-AdministradorModelDAO.prototype.update = function (_id, data, callback) {
+SemestreModelDAO.prototype.update = function (_id, data, callback) {
     var query = { _id: _id }
     this.model.update(query, data).exec(
         function (err, result) {
@@ -32,7 +32,7 @@ AdministradorModelDAO.prototype.update = function (_id, data, callback) {
 
 }
 
-AdministradorModelDAO.prototype.remove = function (_id, callback) {
+SemestreModelDAO.prototype.remove = function (_id, callback) {
     var query = { _id: _id }
     this.model.remove(query).exec(
         function (err, result) {
@@ -42,13 +42,14 @@ AdministradorModelDAO.prototype.remove = function (_id, callback) {
 }
 
 module.exports = function (mongoose) {
-    var administrador = mongoose.model('administradores', {
-        nome: String,
-        sobrenome: String,
-        email: String,
-        cargo: String,
-        login: String
+    var Semestre = mongoose.model('semestres', {
+        ano: String,
+        curso: String,
+        semestre: String,
+        disciplina: String,
+        professor: String,
+        alunosMatriculados: Array
     });
 
-    return new AdministradorModelDAO(administrador);
+    return new SemestreModelDAO(Semestre);
 }

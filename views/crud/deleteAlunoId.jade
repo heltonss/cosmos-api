@@ -1,0 +1,42 @@
+section.row
+div.panel-group(id="accordion" role="tablist" aria-multiselectable="true")
+    div.panel.panel-danger
+        div.panel-heading(role="tab" id="headingOne")
+            a.display-flex(role="button" data-toggle="collapse" data-parent="#accordion" href="#deleteAlunoId" aria-expanded="false" aria-controls="collapseOne")
+                span.bg-primary.icons-status.delete DELETE
+                span.title-panel /alunos/:id 
+                span.describe-method deleta um aluno
+
+        div.panel-collapse.collapse(id="deleteAlunoId" role="tabpanel" aria-labelledby="headingOne")
+            div.panel-body.body-panel
+                p Exclui um aluno da lista de alunos 
+                p.bg-default.parameters Parâmetros
+                    table.table
+                        tr
+                            th nome
+                            th Descrição
+                        tr
+                            td id 
+                                small required
+                            td id do aluno que deve ser excluido
+                            td 
+                                pre.code
+                                    code ok
+               
+                p.bg-default.parameters Resposta
+                  table.table
+                    tr
+                        th Código de status
+                        th Descrição
+                    tr
+                        td 200 
+                        td 
+                            pre.code
+                                code ok
+                    tr
+                        td 500
+                        td
+                            pre.code
+                                code erro de servidor, o servidor pode esta fora do ar ou o id do objeto não existe ou não foi passado corretamente.
+
+                          
