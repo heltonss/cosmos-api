@@ -49,7 +49,8 @@ module.exports = function (mongoose) {
         professor: String,
         qtdAulas: Number,
         qtdFaltas: Number,
-        alunosMatriculados: Array
+        alunosMatriculados: Array,
+        motivo: String,
     });
 
     return new SemestreModelDAO(Semestre);
