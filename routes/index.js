@@ -13,5 +13,6 @@ router.use('/coordenadores', require('./coordenador'))
 router.use('/diretores', require('./diretor'))
 router.use('/cursos', require('./curso'))
 router.use('/semestres', require('./semestre'))
+router.use('/disciplina-alerta', require('./disciplina-alerta'))
 
 module.exports = router;
