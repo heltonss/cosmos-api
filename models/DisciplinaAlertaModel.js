@@ -41,7 +41,7 @@ DisciplinaAlertaModelDAO.prototype.remove = function (_id, callback) {
 }
 
 module.exports = function (mongoose) {
-    var DisciplinaAlerta = mongoose.model('alerta', {
+    var DisciplinaAlerta = mongoose.model('alertadisciplina', {
         ano: String,
         curso: String,
         semestre: String,
