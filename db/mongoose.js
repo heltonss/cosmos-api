@@ -11,7 +11,7 @@ function _connection() {
 	var port = config.get('mongodb.port');;
 	var database = config.get('mongodb.database');;
 	var auth = username ? username + ':' + password + '@' : '';
-
+	console.log('mongodb://' + auth + server + ':' + port + '/' + database)
 	return 'mongodb://' + auth + server + ':' + port + '/' + database;
 }
 
