@@ -1,9 +1,9 @@
 {
     "mongodb":{
-        "username":"",
-        "password":"",
-        "server":"localhost",
-        "port":"27017",
-        "database":"cosmos"
+        "username":"heltonss",
+        "password":"He28xpto",
+        "server":"ds131432.mlab.com",
+        "port":"31432",
+        "database":"heroku_pz266kcz"
     }
 }
